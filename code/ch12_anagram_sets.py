@@ -67,5 +67,3 @@ if __name__ == '__main__':
 
     bingo_words = filter_length(anagram_map, 8)
     print_sorted_anagrams_sets(bingo_words)
-
-
