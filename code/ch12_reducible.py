@@ -1,6 +1,7 @@
 def make_word_dict():
     """
-    Creates a dictionary and add "i", "a" and empty string to it.
+    Creates a dictionary from a wordlist.
+    Adds "i", "a" and empty string to it.
     :return: dictionary
     """
     d = dict()
@@ -16,7 +17,7 @@ def make_word_dict():
 def children(word, word_dict):
     """
     Returns a list of words in the dictionary that can be formed
-    by removing one letter from the specified word.
+    by removing one letter from the predefined word.
 
     :param word: string
     :param word_dict: dictionary
@@ -34,8 +35,7 @@ def children(word, word_dict):
 to be reducible to a list of its reducible children. It starts
 with the empty string."""
 
-memo = {}
-memo[''] = ['']
+memo = {'': ['']}
 
 
 def is_reducible(word, word_dict):
@@ -74,7 +74,7 @@ def all_reducible(word_dict):
     res = []
     for word in word_dict:
         t = is_reducible(word, word_dict)
-        if t != []:
+        if t:       # if t != []:
             res.append(word)
     return res
 
@@ -92,7 +92,7 @@ def print_trail(word):
     t = is_reducible(word, word_dict)
 
     # in is_reducible(), each time a child is appended to res, it is at last
-    # we only want to take the "mother", therefore t[0]
+    # we want to print the sequence from mother to children, therefore use t[0]
     print_trail(t[0])
 
 
