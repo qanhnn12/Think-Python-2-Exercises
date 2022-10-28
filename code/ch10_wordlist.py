@@ -40,5 +40,6 @@ print(elapsed_time2, 'seconds')
 
 """
 The + operator creates a new list by concatenating the original list t with a new list [word],
-then copy all the elements from the original lists to the freshly allocated list. => Longer
-.append() only modifies the existing list by adding a new element to it. => Less time
+then copy all the elements from the original lists to the freshly allocated list. => Longer time
+The .append() only modifies the existing list by adding a new element to it. => Less time
+"""
