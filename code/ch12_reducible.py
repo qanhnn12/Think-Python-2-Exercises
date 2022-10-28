@@ -1,6 +1,6 @@
 def make_word_dict():
     """
-    Creates a dictionary and add "I", "a" and empty string to it.
+    Creates a dictionary and add "i", "a" and empty string to it.
     :return: dictionary
     """
     d = dict()
