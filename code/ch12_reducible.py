@@ -90,6 +90,9 @@ def print_trail(word):
         return
     print(word, end=' ')
     t = is_reducible(word, word_dict)
+
+    # in is_reducible(), each time a child is appended to res, it is at last
+    # we only want to take the "mother", therefore t[0]
     print_trail(t[0])
 
 
@@ -108,7 +111,7 @@ def print_longest_words(word_dict):
     t.sort(reverse=True)
 
     # print the longest 5 words
-    for _, word in t[0:5]:
+    for length, word in t[0:5]:
         print_trail(word)
         print('\n')
 
