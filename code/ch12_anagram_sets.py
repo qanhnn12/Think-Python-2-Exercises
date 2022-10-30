@@ -1,3 +1,15 @@
+def signature(s):
+    """
+    Returns the signature of this string.
+    Signature is a string that contains all letters in order
+    :param s: string
+    :return: ordered string
+    """
+    t = sorted(s)
+    t = ''. join(t)
+    return t
+
+
 def order_tuples(s):
     """
     Returns a tuples of ordered letters
@@ -17,7 +29,7 @@ def all_anagrams(filename):
     d = dict()
     for line in open(filename):
         word = line.strip().lower()
-        t = order_tuples(word)
+        t = signature(word)     # opt2: use order_tuple
 
         if t not in d:
             d[t] = [word]
