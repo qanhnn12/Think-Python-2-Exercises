@@ -24,12 +24,12 @@ def all_anagrams(filename):
     """
     Finds all anagrams in a list of words
     :param filename: string filename of the word list
-    :return: a dictionary that maps from each tuple of words to its anagrams
+    :return: a maps from each word to a list of its anagrams.
     """
     d = dict()
     for line in open(filename):
         word = line.strip().lower()
-        t = signature(word)     # opt2: use order_tuple
+        t = signature(word)     # opt2: use order_tuples
 
         if t not in d:
             d[t] = [word]
@@ -42,7 +42,7 @@ def all_anagrams(filename):
 def print_anagram_sets(d):
     """
     Prints anagram sets in d
-    :param d: map from tuples to list of their anagrams
+    :param d: map from words to list of their anagrams
     """
     for v in d.values():
         if len(v) > 1:
