@@ -3,8 +3,8 @@ def invert_dict(d):
     for key in d:
         val = d[key]
 
-        # create an empty list as the value of the inverse dict
-        # append (the key of d as) the value into the inverse dict
+        # create an empty list as the the value of the inverse dict
+        # append (keys of d as) values into the inverse dict
         inverse.setdefault(val, []).append(key)
     return inverse
 
